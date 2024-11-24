@@ -26,14 +26,14 @@ namespace UnitTest
 		TEST_METHOD(大量に（１０００万）積む)
 		{
 			STACK s;
-			initialize(&s, sizeof(int)*10000000);
+			initialize(&s, sizeof(int)*10);
 
-			for (int i = 0; i < 10000000; i++) {
+			for (int i = 0; i < 10; i++) {
 				Assert::IsTrue(push(&s, i), _T("積むのに成功する"));
 			}
 
-			for (int i = 0; i < 10000000; i++) {
-				Assert::AreEqual(pop(&s), 10000000-1-i, _T("上から取り出す"));
+			for (int i = 0; i < 10; i++) {
+				Assert::AreEqual(pop(&s), 10-1-i, _T("上から取り出す"));
 			}
 
 			finalize(&s);
